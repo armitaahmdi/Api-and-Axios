@@ -1,0 +1,30 @@
+.addButton , .submitButton{
+    height: 35px;
+    width: 10%;
+    border-radius: 5px;
+    margin: 0 15px;
+    border: none;
+    outline: none;
+    padding: 7px;
+    cursor: pointer;
+    background-color: #3B3BA4;
+    color: #fff;
+}
+
+.addButton:hover {
+    border: 2px #3B3BA4 solid;
+    color: #3B3BA4;
+    background-color: #fff;
+}
+
+.commentBox {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.commentBox input,
+.commentBox textarea {
+    margin: 10px;
+}
+
