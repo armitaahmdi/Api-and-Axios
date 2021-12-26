@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Posts extends Component {
-
     render() {
         return (
             <div style={{ border: "3px #3B3BA4 solid", margin: '15px', padding: '10px' }}>
@@ -11,5 +10,4 @@ class Posts extends Component {
         );
     }
 }
-
 export default Posts;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './App.module.css'
-
 import axios from 'axios'
 import Posts from './component/Posts';
 import Comments from './component/Comments'
@@ -18,6 +17,7 @@ class App extends Component {
       showResults: false,
     }
   }
+
   addHandler = () => {
     this.setState((prevState) => ({
       int: prevState.int + 1
@@ -28,6 +28,7 @@ class App extends Component {
       int: prevState.int - 1
     }))
   }
+
   inputHandler = (e) => {
     this.setState({
       input: e.target.value,
@@ -38,19 +39,21 @@ class App extends Component {
       textarea: e.target.value
     })
   }
+
   handleSubmit(e) {
     e.preventDefault()
   }
+
   postHandler = () => {
     this.setState({ showResults: true });
     const data = {
       title: this.state.input,
       body: this.state.textarea,
     }
-    axios.post('https://jsonplaceholder.typicode.com/posts/', data)
-      .then(response => console.log(response.data))
+    axios.post('http://localhost:3001/posts', data)
+      .then(response => axios.get('http://localhost:3001/posts')).then((response) => console.log(response.data))
   }
-  
+
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/posts/')
       .then(response => this.setState({ postData: response.data }))
